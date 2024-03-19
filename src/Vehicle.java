@@ -24,4 +24,11 @@ public class Vehicle {
     public double calculateTollPrice() {
         return tollFee * passengers;
     }
+    public void setPassengers(int passengersSet){
+        passengers = passengersSet;
+    }
+    public void setTollFee(double setFee){
+        tollFee = setFee;
+    }
+
 }

@@ -21,4 +21,20 @@ public class Car extends Vehicle {
         System.out.println("Passengers: " + getPassengers());
         System.out.println("Is Electric: " + electric);
     }
+    public boolean dropOffPassengers(int numOut){
+        if(numOut < getPassengers()){
+            setPassengers(getPassengers() - numOut);
+            return true;
+        }
+        return false;
+    }
+    public void applyDiscount(){
+        if(!discountApplied && isElectric()){
+            setTollFee(getTollFee() * .50);
+            discountApplied = true;
+        }
+    }
+    public  void setDiscount(boolean set){
+        discountApplied = set;
+    }
 }
