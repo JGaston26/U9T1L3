@@ -16,12 +16,19 @@ public class Truck extends Vehicle {
     public boolean hasTrailer() {
         return hasTrailer;
     }
-    public void truckPrinter(){
-        System.out.println("Licence plate: " + getLicensePlate());
-        System.out.println("Toll fee: " + getTollFee());
-        System.out.println("Passengers: " + getPassengers());
+    @Override
+    public void printInfo(){
+        super.printInfo();
         System.out.println("Number of axles: " + axles);
         System.out.println("Has trailer: " + hasTrailer);
-
+    }
+    @Override
+    public double calculateTollPrice(){
+        double toll = getTollFee() * axles;
+        if(hasTrailer){
+            return toll *2;
+        }else{
+            return toll;
+        }
     }
 }

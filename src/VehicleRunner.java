@@ -18,7 +18,7 @@ public class VehicleRunner {
         //    and whether a discount has been applied.
         //
         // d. call the method on the Car you made in b to test it.
-        electricCar.carPrinter();
+        electricCar.printInfo();
 
         // e. write code to create a Truck with license "3K9JMX",
         //    a toll fee of 24.75, 4 passengers, 6 axles, with a trailer.
@@ -31,7 +31,6 @@ public class VehicleRunner {
         //    and whether it has a trailer.
         //
         // g. call the method on the Truck you made in e to test it.
-        jerry.truckPrinter();
 
         // ------------ LAB PART 2 ---------------
         // ----- instructions in lab sheet -------
@@ -42,9 +41,11 @@ public class VehicleRunner {
         System.out.println(terry.isElectric());
         System.out.println(terry.calculateTollPrice());
         System.out.println(terry.getTollFee());
-        terry.taxiPrinter();
 
-
+        bob.turnOnLights(); //vehicle
+        electricCar.turnOnLights(); //car
+        jerry.turnOnLights(); //truck
+        terry.turnOnLights(); //taxi
         // ------------ LAB PART 3 ---------------
         // ----- instructions in lab sheet -------
 

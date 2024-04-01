@@ -4,8 +4,9 @@ public class Taxi extends Car{
         super(licensePlate,tollFee,passengers,electric);
         this.fareCollected = fareCollected;
     }
-    public void taxiPrinter(){
-        super.carPrinter();
+    @Override
+    public void printInfo(){
+        super.printInfo();
         System.out.println("Discount applied? " + isDiscountApplied());
         System.out.println("Fare collected: " + fareCollected);
     }
@@ -17,8 +18,19 @@ public class Taxi extends Car{
            setDiscount(true);
         }
     }
+    public boolean chargeAndDropOffRiders(double fare){
+        int riders = getPassengers()-1;
+        double totalFare = riders * fare;
+        fareCollected += totalFare;
 
+        boolean success = dropOffPassengers(riders);
+        return success;
+    }
     public double getFareCollected() {
         return fareCollected;
+    }
+    @Override
+    public void turnOnLights(){
+        System.out.println("Headlights on and Taxi light on!");
     }
 }
